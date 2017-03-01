@@ -1,0 +1,731 @@
+/* Bootstrap Imported Elements
+-------------------------------------------------- */
+
+/* .pull-right and .pull-left
+------------------------- */
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+
+
+/* Inline list
+------------------------- */
+ul.inline,
+ol.inline {
+    margin-left: 0;
+    list-style: none;
+}
+ul.inline > li,
+ol.inline > li {
+    display: inline-block;
+    *display: inline;
+    padding-right: 5px;
+    padding-left: 5px;
+    *zoom: 1;
+}
+ul.inline > li:first-child,
+ol.inline > li:first-child {
+    padding-left: 0;
+}
+ul.inline > li:last-child,
+ol.inline > li:last-child {
+    padding-right: 0;
+}
+
+/* Pagination
+------------------------- */
+.pagination {
+    margin: 20px 0;
+}
+
+.pagination ul {
+    display: inline-block;
+    *display: inline;
+    margin-bottom: 0;
+    margin-left: 0;
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+       -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pagination ul > li {
+    display: inline;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+    float: left;
+    padding: 4px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-left-width: 0;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    background-color: #f5f5f5;
+}
+
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    color: #999999;
+    cursor: default;
+}
+
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover,
+.pagination ul > .disabled > a:focus {
+    color: #999999;
+    cursor: default;
+    background-color: transparent;
+}
+
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+    border-left-width: 1px;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+
+.pagination-right {
+    text-align: right;
+}
+
+.pagination-large ul > li > a,
+.pagination-large ul > li > span {
+    padding: 11px 19px;
+    font-size: 17.5px;
+}
+
+.pagination-small ul > li > a,
+.pagination-small ul > li > span {
+    padding: 2px 10px;
+    font-size: 11.9px;
+}
+
+.pagination-mini ul > li > a,
+.pagination-mini ul > li > span {
+    padding: 0 6px;
+    font-size: 10.5px;
+}
+
+
+
+/* Common Styles
+-------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 10px;
+    line-height: 1.1em;
+}
+p {
+    margin: 10px 0;
+}
+
+
+/* Header
+-------------------------------------------------- */
+
+.header {
+    margin: 20px 0;
+}
+.header .logo-panel {
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 32px;
+}
+.header .logo-panel a,
+.header .logo-panel a:hover {
+    height: 32px;
+    line-height: 32px;
+    color: #737373;
+    text-decoration: none;
+    display: inline-block;
+}
+.header .logo-panel img {
+    vertical-align: top;
+    margin-right: 8px;
+    max-height: 32px;
+    max-width: auto;
+}
+.header .logo-panel .site-name {
+    font-size: 30px;
+}
+.header .logo-panel .site-description {
+    color: #999999;
+    display: inline-block;
+    margin-top: 4px;
+    position: absolute;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 12px;
+    border-left: 1px solid #999999;
+    padding-left: 12px;
+}
+
+/* Disclaimer
+------------------------- */
+.disclaimer {
+    color: white;
+    padding: 16px 24px;
+    margin-bottom: 40px;
+    background: #0072c6;
+}
+.disclaimer h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+.disclaimer p:last-child {
+    margin-bottom: 0;
+}
+.disclaimer a {
+    color: yellow;
+}
+
+/* Browse Happy
+------------------------- */
+.browsehappy {
+    padding: 16px 24px;
+    border: 1px solid #b94a48;
+    background: #f2dede;
+    margin-bottom: 8px;
+}
+.browsehappy p {
+    margin: 0;
+}
+
+
+/* Post Elements
+-------------------------------------------------- */
+
+/* Base styles
+------------------------- */
+article {
+    padding: 24px 24px 0;
+    border: 1px solid #cccccc;
+    border-bottom-width: 4px;
+    margin-bottom: 30px;
+}
+article img {
+    margin: 10px 0;
+}
+blockquote {
+    margin: 10px 0;
+}
+blockquote p {
+    font-size: 1em;
+    margin: 10px 0;
+    line-height: 20px;
+    padding: 0;
+}
+
+/* Photos
+------------------------- */
+article.photo header {
+    position: relative;
+    margin-bottom: 20px;
+}
+article.photo header img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* Photoset
+------------------------- */
+article.photo .row {
+    margin: 0;
+}
+
+
+/* =============================================================================
+   PXU Photoset Extended Styles
+   ========================================================================== */
+
+.clearit:before, .clearit:after { content: ""; display: table; }
+.clearit:after { clear: both; }
+.clearit { *zoom: 1; }
+
+/* Photoset */
+
+.photo-slideshow {
+    visibility: hidden;
+}
+
+.photo-slideshow.processed {
+    visibility: visible;
+}
+
+.photo-slideshow .row {
+    clear: both;
+    width: 100%;
+}
+
+.photo-slideshow .pxu-photo {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.photo-slideshow .pxu-photo img {
+    display: block;
+}
+
+.photo-slideshow.processed .pxu-photo img {
+    width: 100%;
+    height: auto;
+}
+
+.photo-slideshow .pxu-photo:first-child img {
+    margin-left: 0;
+}
+
+.photo-slideshow .count-1 {
+    width: 100%;
+}
+
+.photo-slideshow .count-2 {
+    width: 50%;
+}
+
+.photo-slideshow .count-3 {
+    width: 33.33%;
+}
+
+.photo-slideshow .count-4 {
+    width: 25%;
+}
+
+.photo-slideshow .count-5 {
+    width: 20%;
+}
+
+.photo-slideshow .info {
+    display: none;
+}
+
+/* Icons for EXIF Data and Zoom */
+
+.photo-data {
+    position: relative;
+    float: left;
+}
+
+.icons {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 66px;
+    text-indent: -9999px;
+    z-index: 999;
+    visibility: hidden;
+}
+
+.icons > span, .icons .tumblr-box span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.zoom {
+    background: url('http://static.tumblr.com/hugxd2w/kgem0so9j/zoom-icon.png');
+}
+
+.info {
+    background: url('http://static.tumblr.com/hugxd2w/ffwm0so9t/info-icon.png');
+    position: relative;
+}
+
+/* EXIF & CAPTION Data Tooltip */
+
+.pxu-data {
+    position: absolute;
+    top: 30px;
+    left: -110px;
+    width: 240px;
+    background: #000;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.4;
+    text-indent: 0;
+    padding: 20px;
+    display: none;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.55);
+
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+}
+
+.pxu-caption {
+    margin-top: 0;
+    word-wrap: break-word;
+}
+
+.pxu-caption:before {
+    content: url('http://static.tumblr.com/hugxd2w/SSBm6wxmm/caption-icon.png');
+    opacity: 0.5;
+    filter: alpha(opacity = 50);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    float: left;
+    margin-right: 5px;
+}
+
+.pxu-data.caption-only .pxu-caption {
+    margin-bottom: 0;
+}
+
+.pxu-data table {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: bold;
+    width: 100%;
+}
+
+.pxu-data table tr {
+    width: 100%;
+}
+
+.pxu-data table tr td {
+    width: 50%;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.pxu-data table tr:last-child td {
+    padding-bottom: 0;
+}
+
+.pxu-data .label {
+    color: #cccccc;
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: right;
+    padding-right: 12px;
+    font-weight: normal;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-bottom: 10px solid rgba(0,0,0,0.85);
+
+    position: absolute;
+    top: -10px;
+    left: 110px;
+}
+
+/* Quote
+------------------------- */
+article.quote header > span.long {
+    line-height: 1.5em;
+}
+
+article.quote header > span.short {
+    line-height: 1.3em;
+}
+
+article.quote header > p:first-child {
+    margin-top: 0;
+}
+
+article.quote header > p:last-child {
+    margin-bottom: 0;
+}
+
+article.quote header > span.short {
+    font-size: 30px;
+}
+article.quote header > span.long {
+    font-size: 18px;
+}
+
+/* Link
+------------------------- */
+article.link header {
+    margin-bottom: 20px;
+}
+.link-wrapper h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.link-wrapper h2 a {
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+    word-wrap: break-word;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    color: #0072c6;
+    border: 1px solid #0072c6;
+}
+
+.link-wrapper h2 a:hover {
+    color: white;
+    background-color: #3d94d4;
+    border: 1px solid #3d94d4;
+    text-decoration: none;
+}
+
+/* Chat
+------------------------- */
+article.chat section p.even {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+}
+article.chat section p {
+    padding: 5px;
+    margin: 0;
+}
+article.chat section p:last-child {
+    border: 0;
+}
+
+/* Audio
+------------------------- */
+article.audio header {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.tumblr_audio_player {
+    width: 100%;
+}
+
+.soundcloud_audio_player {
+    width: 100%;
+}
+
+/* Video - http://alistapart.com/article/creating-intrinsic-ratios-for-video
+------------------------- */
+.video-wrapper {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe, .video-wrapper object, .video-wrapper embed, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* Ask
+------------------------- */
+article.ask header {
+    margin-bottom: 40px;
+}
+article.ask .question {
+    position: relative;
+    padding: 0px;
+    background: #d9d9d9;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin-bottom: 40px;
+}
+article.ask .question:after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: #d9d9d9 transparent transparent transparent;
+    z-index: 1;
+    margin-left: -20px;
+    bottom: -20px;
+    left: 10%;
+}
+article.ask .answered {
+    position: relative;
+    padding: 0px;
+    background: #d9d9d9;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin-top: 40px;
+}
+article.ask .answered:after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 20px 20px 0;
+    border-color: transparent #d9d9d9 transparent transparent;
+    z-index: 1;
+    margin-left: 0;
+    bottom: -20px;
+    right: 10%;
+}
+article.ask .inside {
+    padding: 20px 24px;
+}
+article.ask .inside p {
+    margin: 0;
+}
+article.ask a.asker {
+    color: white;
+}
+article.ask a.answerer {
+    color: #333;
+}
+article.ask .body {
+    font-size: 18px;
+    line-height: 1.2em;
+}
+
+/* */
+
+/* Tags
+------------------------- */
+article div.tags {
+    margin: 20px 0;
+}
+article div.tags ul.tags {
+    margin: 20px 0 -10px 0;
+    padding: 0;
+}
+article div.tags ul.tags li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    margin-bottom: 5px;
+    padding: 2px 0;
+    /*  margin-right: 12px;*/
+
+}
+article div.tags ul.tags li:first-child {
+    float: none;
+    margin-right: 5px;
+}
+article div.tags ul.tags li a:hover {
+    text-decoration: none;
+}
+article div.tags ul.tags li:first-child {
+    color: #999;
+}
+article div.tags ul.tags li:first-child a {
+    color: #999;
+}
+article div.tags ul.tags li:first-child i {
+    opacity: .75;
+}
+
+/* Notes
+------------------------- */
+article.post-notes {
+    padding: 10px 24px;
+    border-bottom-width: 1px;
+}
+article.post-notes img {
+    margin: 0;
+}
+article.post-notes ol.notes {
+    margin: 0;
+    list-style-type: none;
+}
+article.post-notes .notes li {
+    padding: 5px;
+}
+article.post-notes .notes li:nth-child(even) {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+}
+article.post-notes .notes li:last-child {
+    border-bottom: 0;
+}
+
+/* Post footer
+------------------------- */
+footer {
+    margin-top: 20px;
+    font-size: 85%
+}
+footer .container-fluid {
+    padding: 0;
+}
+footer li {
+    color: #999999;
+}
+footer a, footer a:hover {
+    color: #999999;
+}
+
+
+/* Sidebar
+-------------------------------------------------- */
+
+/* SideStep(TM) elements
+------------------------- */
+.sidestep {
+    margin: 20px 0;
+}
+
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #cccccc;
+    font-size: 85%;
+}
+
+.footer p {
+    margin: 0;
+    color: #777;
+}
+
+
+/* Others
+-------------------------------------------------- */
+
+/* Back to top button
+------------------------- */
+a.btn-top {
+    display: block;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}

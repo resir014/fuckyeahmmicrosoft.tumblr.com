@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} | {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+
+        <meta name="description" content="{MetaDescription}" />
+
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/css/milk.min.css" />
+
+        <!-- Custom styles -->
+        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/css/font-awesome.min.css">
+
+        <!-- Still use IE8 or below? You poor poor thing. -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <div class="container">
+            <div class="header">
+                <div class="logo-panel">
+                    <a href="/">
+                        <img src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/img/M_box.png" />
+                        <span class="site-name">fuckyeahMicrosoft</span><span class="site-description hidden-phone">the official unofficial Microsoft tumblr!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--[if lt IE 7]>
+            <div class="container">
+                <div class="browsehappy">
+                    <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+                </div>
+            </div>
+        <![endif]-->
+
+        <!-- Disclaimer -->
+        <div class="container">
+            <div class="disclaimer">
+                <h1>Please Note</h1>
+                <p>This blog has absolutely no connection with Microsoft and is not affiliated with them in any way (unfortunately).</p>
+            </div>
+        </div>
+
+        <!-- Posts -->
+        <div class="container">
+            <div class="row">
+                <div id="main" role="main" class="span9">
+
+                    {block:Posts}
+                    {block:Text}<!-- Text post
+                    ================================================== -->
+                    <article class="text">
+
+                        {block:Title}<header>
+                            <h2>{Title}</h2>
+                        </header>{/block:Title}
+
+                        <section>
+                            {Body}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.text -->{/block:Text}
+
+                    {block:Photo}<!-- Photo post
+                    ================================================== -->
+                    <article class="photo">
+
+                        <header>
+                            {LinkOpenTag}<img src="{PhotoURL-1280}" />{LinkCloseTag}
+                        </header>
+
+                        <section>
+                            {block:Caption}{Caption}{/block:Caption}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.photo -->{/block:Photo}
+
+                    {block:Photoset}<!-- Photoset post
+                    ================================================== -->
+                    <article class="photo">
+
+                        <header>
+                            <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+
+                                {block:Photos}
+                                    <div class="photo-data">
+                                        <div class="pxu-photo">
+                                            <img alt="{PhotoAlt}" src="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" class="{block:Exif}exif-yes {/block:Exif}{block:Caption}caption-yes{/block:Caption}" {block:Exif}data-camera="{block:Camera}{Camera}{/block:Camera}" data-iso="{block:ISO}{ISO}{/block:ISO}" data-aperture="{block:Aperture}{Aperture}{/block:Aperture}" data-exposure="{block:Exposure}{Exposure}{/block:Exposure}" data-focal="{block:FocalLength}{FocalLength}{/block:FocalLength}"{/block:Exif} {block:Caption}data-caption="{Caption}"{/block:Caption}>
+                                        </div>
+                                        <div class="icons">
+                                            <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
+                                                <span class="zoom">Zoom</span>
+                                            </a>
+                                            <span class="info">Info</span>
+                                        </div>
+                                    </div>
+                                {/block:Photos}
+
+                            </div><!-- close SLIDESHOW -->
+                        </header>
+
+                        <section>
+                            {block:Caption}{Caption}{/block:Caption}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.photo -->{/block:Photoset}
+
+                    {block:Panorama}<!-- Panorama post
+                    ================================================== -->
+                    <article class="photo">
+
+                        <header>
+                            {LinkOpenTag}<img src="{PhotoURL-Panorama}" />{LinkCloseTag}
+                        </header>
+
+                        <section>
+                            {block:Caption}{Caption}{/block:Caption}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.photo -->{/block:Panorama}
+
+
+                    {block:Quote}<!-- Quote post
+                    ================================================== -->
+                    <article class="quote">
+
+                        <!-- TODO: styles -->
+                        <header>
+                            <span class="{Length}">{Quote}</span>
+                        </header>
+
+                        <section>
+                            {block:Source}&mdash; {Source}{/block:Source}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.quote -->{/block:Quote}
+
+                    {block:Link}<!-- Link post
+                    ================================================== -->
+                    <article class="link">
+
+                        <header>
+                            <div class="link-wrapper">
+                                <h2><a href="{URL}" {Target}><span class="title">{Name}</span> <i class="fa fa-angle-double-right"></i></a></h2>
+                            </div>
+                        </header>
+
+                        <section>
+                            {block:Description}{Description}{/block:Description}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.link -->{/block:Link}
+
+                    {block:Chat}<!-- Chat post
+                    ================================================== -->
+                    <article class="chat">
+
+                        {block:Title}<header>
+                            <h2>{Title}</h2>
+                        </header>{/block:Title}
+
+                        <section>
+                            {block:Lines}<p class="{Alt}">{block:Label}<span><strong>{Label}</strong></span> {/block:Label}{Line}</p>
+                            {/block:Lines}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.chat -->{/block:Chat}
+
+                    {block:Audio}<!-- Audio post
+                    ================================================== -->
+                    <article class="audio">
+
+                        <header>
+                            {block:AudioEmbed}
+                                {AudioEmbed color="white"}
+                            {/block:AudioEmbed}
+                        </header>
+
+                        <section>
+                            {block:Caption}{Caption}{/block:Caption}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.audio -->{/block:Audio}
+
+                    {block:Video}<!-- Video post
+                    ================================================== -->
+                    <article class="video">
+
+                        <div class="video-wrapper">
+                            {Video-700}
+                        </div>
+
+                        <section>
+                            {block:Caption}{Caption}{/block:Caption}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.video -->{/block:Video}
+
+                    {block:Answer}<!-- Answer post
+                    ================================================== -->
+                    <article class="ask">
+
+                        <header>
+                            <div class="question">
+                                <div class="inside">
+                                    <p>{Asker} asked:</p>
+                                    <div class="body">
+                                        <p>{Question}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {block:Answerer}<div class="answered">
+                                <div class="inside">
+                                    <p>{Answerer} answered:</p>
+                                    <div class="body">
+                                        <p>{Answer}</p>
+                                    </div>
+                                </div>
+                            </div>{/block:Answerer}
+                        </header>
+
+                        <section>
+                            {Replies}
+
+                            {block:HasTags}<div class="tags">
+                                <ul class="tags">
+                                <li class="tag-label"><i class="fa fa-tag"></i> Tags:</li>
+                                    {block:Tags}<li><a class="btn btn-mini btn-striped-gray-bottom" href="{TagURL}">#{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                            </div> <!-- /.tags -->{/block:HasTags}
+
+                        </section>
+
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <ul class="inline">
+                                            {block:RebloggedFrom}<li><i class="fa fa-retweet"></i> <a href="{ReblogParentURL}">{ReblogParentName}</a></li>{/block:RebloggedFrom}
+                                            {block:ContentSource}<li>Source: <a href="{SourceURL}">{SourceTitle}</a></li>{/block:ContentSource}
+                                        </ul>
+                                    </div>
+                                    <div class="span6">
+                                        <ul class="inline pull-right">
+                                            <li><i class="fa fa-time"></i> <a href="{Permalink}">{TimeAgo}</a></li>
+                                            <li><i class="fa fa-heart"></i> <a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </article> <!-- /.answer -->{/block:Answer}
+
+                    {block:PostNotes}
+
+                    <article class="post-notes">
+                        {PostNotes}
+                    </article>
+                    {/block:PostNotes}
+                    {/block:Posts}
+
+                    {block:Pagination}<div class="pagination-centered">
+                        <div class="pagination">
+                            <ul>
+                                {block:PreviousPage}
+                                <li><a href="{PreviousPage}">&laquo;</a></li>
+                                {/block:PreviousPage}
+                                {block:JumpPagination}
+                                {block:CurrentPage}
+                                <li class="active"><a>{PageNumber}</a></li>
+                                {/block:CurrentPage}
+                                {block:JumpPage}
+                                <li><a href="{URL}">{PageNumber}</a></li>
+                                {/block:JumpPage}
+                                {/block:JumpPagination}
+                                {block:NextPage}
+                                <li><a href="{NextPage}">&raquo;</a></li>
+                                {/block:NextPage}
+                            </ul>
+                        </div>
+                    </div>{/block:Pagination}
+                    {block:PermalinkPagination}<div class="pagination-centered">
+                        <div class="pagination">
+                            <ul>
+                                {block:PreviousPost}
+                                <li><a href="{PreviousPost}">&laquo; Previous Post</a></li>
+                                {/block:PreviousPost}
+                                {block:NextPost}
+                                <li><a href="{NextPost}">Next Post &raquo;</a></li>
+                                {/block:NextPost}
+                            </ul>
+                        </div>
+                    </div>{/block:PermalinkPagination}
+
+                </div> <!-- /.span9 -->
+
+                <aside role="sidebar" class="span3">
+
+                    {block:AskEnabled}
+                        <a href="/ask" class="btn btn-large btn-block btn-primary"><i class="fa fa-comments-o fa-fw pull-left" style="padding-left: .6em; padding-top: 2px;"></i> Ask us anything!</a>
+                    {/block:AskEnabled}
+                    <a href="/archive" class="btn btn-large btn-block"><i class="fa fa-archive fa-fw pull-left" style="padding-left: .6em; padding-top: 2px;"></i> Archive</a>
+                    <a href="{RSS}" class="btn btn-large btn-block"><i class="fa fa-rss fa-fw pull-left" style="padding-left: .6em; padding-top: 2px;"></i> RSS</a>
+
+                    <div class="sidestep">
+                        <h3>About</h3>
+                        <p>{Description}</p>
+                    </div> <!-- /.sidestep -->
+
+                    <div class="sidestep">
+                        <h3>Search by tag</h3>
+                        <a href="/tagged/windows" class="btn btn-block btn-striped-blue">Windows</a>
+                        <a href="/tagged/windows-phone" class="btn btn-block btn-striped-purple">Windows Phone</a>
+                        <a href="/tagged/surface" class="btn btn-block btn-striped-dark-orange">Surface</a>
+                        <a href="/tagged/xbox" class="btn btn-block btn-striped-green">Xbox</a>
+                    </div> <!-- /.sidestep -->
+
+                    <div class="sidestep">
+                        <h3>Can't find it?</h3>
+                        <form action="/search" method="get" id="search" class="form-search">
+                            <div class="input-append">
+                                <input type="text" name="q" id="q" placeholder="{lang:Search}" value="{SearchQuery}" style="width: 176px;">
+                                <span class="add-on"><i class="icon-16-Search"></i></span>
+                            </div>
+                        </form>
+                    </div> <!-- /.sidestep -->
+                </aside> <!-- /.span3 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="span-12">
+                        <p>All images, names, and logos are copyrights of their respective owners.</p>
+                        <p>Microsoft, Windows, Windows Phone, Surface and all of its related brands are copyrights of <a href="http://www.microsoft.com/">Microsoft</a> and is unaffiliated with us at <a href="/">fuckyeahMicrosoft</a>.</p>
+                        <p>Theme designed by <a href="http://resir014.tumblr.com/">resir014</a> using the <a href="http://getbootstrap.com/">Bootstrap</a> framework, built by the <a href="http://twitter.com/mdo">awesome</a> <a href="http://twitter.com/fat">folks</a> at <a href="http://twitter.com/">Twitter</a>.</p>
+                    </div> <!-- /.span12 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.footer -->
+
+        <a href="#top" class="btn btn-top" type="button">Back to top <i class="fa fa-level-up"></i></a>
+
+
+
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/pxuPhotoset.min.js"></script>
+<script type="text/javascript">$(document).ready(function() { $('.photo-slideshow').pxuPhotoset({'rounded':false,'ligthbox':true,'highRes':true}, function() {});});</script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/bootstrap-affix.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/bootstrap-carousel.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/bootstrap-collapse.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/resir014/fuckyeahmmicrosoft.tumblr.com/js/bootstrap-tab.js"></script>
+
+    </body>
+</html>
